@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Atari Cafe | Bankhedi</title>
+<style>
+:root{--black:#0b0b0b;--white:#ffffff;--gray:#f4f4f4}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--white);color:var(--black)}
+.hero{min-height:78vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),url('photo1.jpg') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:30px}
+.hero h1{font-size:clamp(50px,10vw,100px);letter-spacing:8px;margin:0}
+.hero p{font-size:20px;letter-spacing:2px;margin:14px 0 28px}
+.btn{display:inline-block;background:white;color:#111;padding:14px 24px;border-radius:30px;text-decoration:none;font-weight:bold;margin:6px;border:2px solid white}
+.btn.dark{background:#111;color:#fff;border-color:#111}
+nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #ddd;text-align:center;padding:15px}
+nav a{color:#111;text-decoration:none;margin:0 12px;font-weight:bold}
+section{max-width:1100px;margin:auto;padding:65px 22px}
+.section-title{text-align:center;font-size:38px;margin:0 0 12px}
+.line{width:70px;height:3px;background:#111;margin:0 auto 35px}
+.about{background:#f5f5f5;border-radius:20px;padding:35px;text-align:center;font-size:18px;line-height:1.7}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
+.gallery img{width:100%;height:280px;object-fit:cover;border-radius:18px;box-shadow:0 8px 22px rgba(0,0,0,.16)}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:#111;color:#fff;border-radius:18px;padding:28px;text-align:center}
+.card h3{margin-top:0;font-size:23px}
+.card p{line-height:1.6}
+footer{background:#111;color:#fff;text-align:center;padding:30px 15px}
+footer p{margin:7px}
+@media(max-width:600px){nav a{margin:0 7px;font-size:14px}.gallery img{height:250px}}
+</style>
+</head>
+<body>
+<section class="hero">
+<div>
+<h1>ATARI CAFE</h1>
+<p>GOOD FOOD • GREAT VIBES • GOOD TIMES</p>
+<a class="btn" href="#contact">Visit Us</a>
+<a class="btn" href="#gallery">View Gallery</a>
+</div>
+</section>
+
+<nav>
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+<h2 class="section-title">Welcome to Atari Cafe</h2>
+<div class="line"></div>
+<div class="about">
+Atari Cafe is a place to relax, enjoy good food and spend quality time with your friends and family.
+Come for the food, stay for the vibe.
+</div>
+</section>
+
+<section id="gallery">
+<h2 class="section-title">Our Gallery</h2>
+<div class="line"></div>
+<div class="gallery">
+<img src="photo2.jpg" alt="Atari Cafe">
+<img src="photo3.jpg" alt="Atari Cafe">
+<img src="photo4.jpg" alt="Atari Cafe">
+<img src="photo5.jpg" alt="Atari Cafe">
+<img src="photo6.jpg" alt="Atari Cafe">
+<img src="photo7.jpg" alt="Atari Cafe">
+<img src="photo8.jpg" alt="Atari Cafe">
+</div>
+</section>
+
+<section id="contact">
+<h2 class="section-title">Contact Us</h2>
+<div class="line"></div>
+<div class="info">
+<div class="card"><h3>📍 Location</h3><p>Idhgah Chauraha<br>Station Road, Bankhedi</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Idhgah+Chauraha+Station+Road+Bankhedi">Open Maps</a></div>
+<div class="card"><h3>📞 Phone</h3><p>7898155515</p><a class="btn" href="tel:7898155515">Call Now</a></div>
+<div class="card"><h3>💬 WhatsApp</h3><p>Message us anytime</p><a class="btn" href="https://wa.me/917898155515">Chat on WhatsApp</a></div>
+</div>
+</section>
+
+<footer>
+<p><strong>ATARI CAFE</strong></p>
+<p>Good Food • Great Vibes • Good Times</p>
+<p>© 2026 Atari Cafe. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
