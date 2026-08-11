@@ -5,85 +5,165 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Atari Cafe | Bankhedi</title>
 <style>
-:root{--black:#0b0b0b;--white:#ffffff;--gray:#f4f4f4}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--white);color:var(--black)}
-.hero{min-height:78vh;background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.65)),url('photo1.jpg') center/cover;display:flex;align-items:center;justify-content:center;text-align:center;color:white;padding:30px}
-.hero h1{font-size:clamp(50px,10vw,100px);letter-spacing:8px;margin:0}
-.hero p{font-size:20px;letter-spacing:2px;margin:14px 0 28px}
-.btn{display:inline-block;background:white;color:#111;padding:14px 24px;border-radius:30px;text-decoration:none;font-weight:bold;margin:6px;border:2px solid white}
-.btn.dark{background:#111;color:#fff;border-color:#111}
-nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #ddd;text-align:center;padding:15px}
-nav a{color:#111;text-decoration:none;margin:0 12px;font-weight:bold}
-section{max-width:1100px;margin:auto;padding:65px 22px}
-.section-title{text-align:center;font-size:38px;margin:0 0 12px}
-.line{width:70px;height:3px;background:#111;margin:0 auto 35px}
-.about{background:#f5f5f5;border-radius:20px;padding:35px;text-align:center;font-size:18px;line-height:1.7}
-.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px}
-.gallery img{width:100%;height:280px;object-fit:cover;border-radius:18px;box-shadow:0 8px 22px rgba(0,0,0,.16)}
-.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
-.card{background:#111;color:#fff;border-radius:18px;padding:28px;text-align:center}
-.card h3{margin-top:0;font-size:23px}
-.card p{line-height:1.6}
-footer{background:#111;color:#fff;text-align:center;padding:30px 15px}
-footer p{margin:7px}
-@media(max-width:600px){nav a{margin:0 7px;font-size:14px}.gallery img{height:250px}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:#0b0b0b;color:#fff}
+.hero{min-height:78vh;background:linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.28)),url('photo1.jpg') center/cover;display:flex;align-items:center;padding:40px 7%}
+.hero h1{font-size:clamp(52px,10vw,100px);letter-spacing:7px;margin:0}
+.hero p{font-size:20px;letter-spacing:2px}
+.btn{display:inline-block;background:#fff;color:#111;padding:14px 23px;border-radius:30px;text-decoration:none;font-weight:bold;margin:5px}
+.btn.dark{background:#111;color:#fff;border:1px solid #fff}
+nav{position:sticky;top:0;z-index:10;background:#111;border-bottom:1px solid #333;text-align:center;padding:15px}
+nav a{color:#fff;text-decoration:none;margin:0 12px;font-weight:bold}
+section{max-width:1150px;margin:auto;padding:65px 20px}
+.title{text-align:center;font-size:38px;margin:0 0 10px}
+.line{width:65px;height:3px;background:#fff;margin:0 auto 35px}
+.about{text-align:center;background:#171717;border:1px solid #333;border-radius:20px;padding:30px;font-size:18px;line-height:1.7}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.gallery img{width:100%;height:270px;object-fit:cover;border-radius:16px}
+.menu-board{width:100%;max-width:950px;display:block;margin:0 auto 35px;border-radius:16px}
+.categories{display:flex;gap:10px;overflow:auto;padding:5px 0 18px;white-space:nowrap}
+.categories button{background:#191919;color:#fff;border:1px solid #444;border-radius:22px;padding:10px 16px;cursor:pointer}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px}
+.menu-card{background:#151515;border:1px solid #333;border-radius:16px;padding:18px}
+.menu-card h3{margin:0 0 14px;font-size:23px}
+.item{display:flex;justify-content:space-between;gap:10px;align-items:center;border-top:1px solid #292929;padding:12px 0}
+.item:first-of-type{border-top:0}
+.price{font-weight:bold;white-space:nowrap}
+.add{background:#fff;color:#111;border:0;border-radius:18px;padding:7px 12px;font-weight:bold;cursor:pointer}
+.cart{position:fixed;right:18px;bottom:18px;background:#fff;color:#111;border:0;border-radius:30px;padding:14px 20px;font-weight:bold;box-shadow:0 8px 30px #000;z-index:20;cursor:pointer}
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);z-index:30;padding:20px}
+.modal-box{max-width:600px;margin:5vh auto;background:#111;border:1px solid #444;border-radius:20px;padding:24px;max-height:85vh;overflow:auto}
+.close{float:right;background:none;border:0;color:#fff;font-size:28px;cursor:pointer}
+.cart-row{display:flex;justify-content:space-between;border-bottom:1px solid #333;padding:10px 0}
+.total{font-size:22px;font-weight:bold;margin:18px 0}
+input,textarea{width:100%;background:#191919;color:#fff;border:1px solid #444;border-radius:10px;padding:12px;margin:6px 0 12px}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.card{background:#151515;border:1px solid #333;border-radius:18px;padding:25px;text-align:center}
+footer{background:#111;border-top:1px solid #333;text-align:center;padding:30px}
+@media(max-width:600px){nav a{margin:0 6px;font-size:13px}.hero{min-height:68vh}}
 </style>
 </head>
 <body>
-<section class="hero">
+
+<div class="hero">
 <div>
 <h1>ATARI CAFE</h1>
 <p>GOOD FOOD • GREAT VIBES • GOOD TIMES</p>
-<a class="btn" href="#contact">Visit Us</a>
-<a class="btn" href="#gallery">View Gallery</a>
+<a class="btn" href="#order">Order Online</a>
+<a class="btn dark" href="#gallery">View Gallery</a>
 </div>
-</section>
+</div>
 
 <nav>
-<a href="#about">About</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
+<a href="#about">About</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#contact">Contact</a>
 </nav>
 
 <section id="about">
-<h2 class="section-title">Welcome to Atari Cafe</h2>
-<div class="line"></div>
-<div class="about">
-Atari Cafe is a place to relax, enjoy good food and spend quality time with your friends and family.
-Come for the food, stay for the vibe.
-</div>
+<h2 class="title">Welcome to Atari Cafe</h2><div class="line"></div>
+<div class="about">A comfortable place in Bankhedi to enjoy delicious food, refreshing drinks and good times with friends and family.</div>
+</section>
+
+<section id="menu">
+<h2 class="title">Our Menu</h2><div class="line"></div>
+<img class="menu-board" src="menu-board.png" alt="Atari Cafe Menu">
+<div class="categories" id="cats"></div>
+<div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<section id="order">
+<h2 class="title">Order Online</h2><div class="line"></div>
+<div class="about">Add your favourite items to the cart, enter your details and send the order directly to Atari Cafe on WhatsApp.</div>
 </section>
 
 <section id="gallery">
-<h2 class="section-title">Our Gallery</h2>
-<div class="line"></div>
+<h2 class="title">Gallery</h2><div class="line"></div>
 <div class="gallery">
-<img src="photo2.jpg" alt="Atari Cafe">
-<img src="photo3.jpg" alt="Atari Cafe">
-<img src="photo4.jpg" alt="Atari Cafe">
-<img src="photo5.jpg" alt="Atari Cafe">
-<img src="photo6.jpg" alt="Atari Cafe">
-<img src="photo7.jpg" alt="Atari Cafe">
-<img src="photo8.jpg" alt="Atari Cafe">
+<img src="photo2.jpg"><img src="photo3.jpg"><img src="photo4.jpg"><img src="photo5.jpg">
+<img src="photo6.jpg"><img src="photo7.jpg"><img src="photo8.jpg">
 </div>
 </section>
 
 <section id="contact">
-<h2 class="section-title">Contact Us</h2>
-<div class="line"></div>
+<h2 class="title">Contact Us</h2><div class="line"></div>
 <div class="info">
-<div class="card"><h3>📍 Location</h3><p>Idhgah Chauraha<br>Station Road, Bankhedi</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Idhgah+Chauraha+Station+Road+Bankhedi">Open Maps</a></div>
-<div class="card"><h3>📞 Phone</h3><p>7898155515</p><a class="btn" href="tel:7898155515">Call Now</a></div>
-<div class="card"><h3>💬 WhatsApp</h3><p>Message us anytime</p><a class="btn" href="https://wa.me/917898155515">Chat on WhatsApp</a></div>
+<div class="card"><h3>Location</h3><p>Idhgah Chauraha<br>Station Road, Bankhedi</p><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Idhgah+Chauraha+Station+Road+Bankhedi">Open Maps</a></div>
+<div class="card"><h3>Phone</h3><p>7898155515</p><a class="btn" href="tel:7898155515">Call Now</a></div>
+<div class="card"><h3>WhatsApp Orders</h3><p>Send your order directly to us.</p><a class="btn" href="https://wa.me/917898155515">WhatsApp</a></div>
 </div>
 </section>
 
+<button class="cart" onclick="openCart()">🛒 Cart (<span id="count">0</span>)</button>
+
+<div class="modal" id="modal">
+<div class="modal-box">
+<button class="close" onclick="closeCart()">×</button>
+<h2>Your Order</h2>
+<div id="cartItems"></div>
+<div class="total">Total: ₹<span id="total">0</span></div>
+<label>Name</label><input id="customerName" placeholder="Your name">
+<label>Phone</label><input id="customerPhone" placeholder="Your phone number">
+<label>Address</label><textarea id="customerAddress" placeholder="Delivery / pickup details"></textarea>
+<button class="btn dark" onclick="sendOrder()">Send Order on WhatsApp</button>
+</div>
+</div>
+
 <footer>
-<p><strong>ATARI CAFE</strong></p>
-<p>Good Food • Great Vibes • Good Times</p>
-<p>© 2026 Atari Cafe. All Rights Reserved.</p>
+<strong>ATARI CAFE</strong><br><br>
+Good Food • Great Vibes • Good Times<br>
+© 2026 Atari Cafe. All Rights Reserved.
 </footer>
+
+<script>
+const menu = [{"category": "Breakfast", "items": [{"name": "Poha", "price": 80}, {"name": "Kachori (2 pcs)", "price": 60}, {"name": "Samosa (2 pcs)", "price": 60}, {"name": "Bread Pakoda", "price": 60}]}, {"category": "Tasty Center", "items": [{"name": "Aloo Tikki Burger", "price": 70}, {"name": "Veg Burger", "price": 70}, {"name": "Cheese Burger", "price": 90}, {"name": "Veg Sandwich", "price": 60}]}, {"category": "Chaat", "items": [{"name": "Pani Puri", "price": 40}, {"name": "Sev Puri", "price": 50}, {"name": "Dahi Puri", "price": 60}, {"name": "Bhel Puri", "price": 60}, {"name": "Masala Puri", "price": 60}, {"name": "Mix Sev", "price": 60}]}, {"category": "Chinese", "items": [{"name": "Veg Manchurian", "price": 110}, {"name": "Chilli Paneer (Dry)", "price": 120}, {"name": "Chilli Paneer (Gravy)", "price": 130}, {"name": "Veg Fried Rice", "price": 100}, {"name": "Schezwan Fried Rice", "price": 110}, {"name": "Veg Noodles", "price": 100}, {"name": "Schezwan Noodles", "price": 110}, {"name": "Hakka Noodles", "price": 120}]}, {"category": "Omelette", "items": [{"name": "Omelette", "price": 50}, {"name": "Tomato Omelette", "price": 60}, {"name": "Onion Omelette", "price": 60}, {"name": "Paneer Omelette", "price": 80}, {"name": "Bhurji Pav", "price": 60}]}, {"category": "Shakes", "items": [{"name": "Vanilla Shake", "price": 90}, {"name": "Chocolate Shake", "price": 100}, {"name": "Strawberry Shake", "price": 100}, {"name": "Mango Shake", "price": 100}]}, {"category": "Soups", "items": [{"name": "Veg Soup", "price": 70}, {"name": "Tomato Soup", "price": 70}, {"name": "Hot & Sour Soup", "price": 80}, {"name": "Manchow Soup", "price": 80}]}, {"category": "Coffee", "items": [{"name": "Cold Coffee", "price": 90}, {"name": "Hot Coffee", "price": 60}, {"name": "Cappuccino", "price": 80}, {"name": "Mocha", "price": 90}]}, {"category": "Ice Cream", "items": [{"name": "Vanilla Cup", "price": 50}, {"name": "Chocolate Cup", "price": 60}, {"name": "Strawberry Cup", "price": 60}, {"name": "Butterscotch Cup", "price": 70}, {"name": "Mango Cup", "price": 70}, {"name": "Family Pack", "price": 150}]}, {"category": "Lassi", "items": [{"name": "Sweet Lassi", "price": 50}, {"name": "Salted Lassi", "price": 50}, {"name": "Mango Lassi", "price": 60}, {"name": "Strawberry Lassi", "price": 60}]}, {"category": "Rice", "items": [{"name": "Veg Fried Rice", "price": 100}, {"name": "Schezwan Rice", "price": 110}, {"name": "Triple Fried Rice", "price": 120}]}, {"category": "Main Course", "items": [{"name": "Paneer Butter Masala", "price": 150}, {"name": "Paneer Lababdar", "price": 150}, {"name": "Shahi Paneer", "price": 160}, {"name": "Mix Veg", "price": 140}, {"name": "Dal Tadka", "price": 120}, {"name": "Jeera Rice", "price": 80}, {"name": "Tandoori Roti", "price": 20}, {"name": "Butter Naan", "price": 40}]}, {"category": "Starters", "items": [{"name": "French Fries", "price": 80}, {"name": "Paneer Tikka", "price": 150}, {"name": "Veg Tikka", "price": 130}, {"name": "Hara Bhara Kabab", "price": 120}, {"name": "Chilli Paneer (Dry)", "price": 120}]}, {"category": "Milkshakes", "items": [{"name": "Vanilla Milkshake", "price": 90}, {"name": "Chocolate Milkshake", "price": 100}, {"name": "Strawberry Milkshake", "price": 100}, {"name": "Mango Milkshake", "price": 100}]}, {"category": "Pizza", "items": [{"name": "Veg Cheese Pizza", "price": 150}, {"name": "Paneer Pizza", "price": 180}, {"name": "Veg Cheese Burst Pizza", "price": 220}, {"name": "Farm House Pizza", "price": 220}]}, {"category": "South Indian", "items": [{"name": "Idli Sambar", "price": 80}, {"name": "Vada Sambar", "price": 80}, {"name": "Masala Dosa", "price": 100}, {"name": "Paneer Dosa", "price": 120}]}, {"category": "Cold Drinks", "items": [{"name": "Cold Drink", "price": 30}, {"name": "Masala Chhach", "price": 40}, {"name": "Sweet Chhach", "price": 40}, {"name": "Lassi", "price": 50}, {"name": "Fresh Lime Water", "price": 40}]}];
+let cart = [];
+
+function renderMenu(filter="All"){
+ const grid=document.getElementById("menuGrid");
+ grid.innerHTML="";
+ menu.filter(x=>filter==="All"||x.category===filter).forEach(cat=>{
+   const card=document.createElement("div"); card.className="menu-card";
+   card.innerHTML="<h3>"+cat.category+"</h3>";
+   cat.items.forEach(it=>{
+     const row=document.createElement("div"); row.className="item";
+     row.innerHTML="<span>"+it.name+"</span><span class='price'>₹"+it.price+" <button class='add' onclick='addItem("+JSON.stringify(it.name)+","+it.price+")'>Add</button></span>";
+     card.appendChild(row);
+   });
+   grid.appendChild(card);
+ });
+}
+function renderCats(){
+ const c=document.getElementById("cats");
+ ["All",...menu.map(x=>x.category)].forEach(cat=>{
+  const b=document.createElement("button"); b.textContent=cat; b.onclick=()=>renderMenu(cat); c.appendChild(b);
+ });
+}
+function addItem(name,price){
+ const found=cart.find(x=>x.name===name);
+ if(found) found.qty++; else cart.push({name,price,qty:1});
+ updateCart();
+}
+function updateCart(){
+ document.getElementById("count").textContent=cart.reduce((s,x)=>s+x.qty,0);
+ let total=cart.reduce((s,x)=>s+x.price*x.qty,0);
+ document.getElementById("total").textContent=total;
+ document.getElementById("cartItems").innerHTML=cart.length?cart.map((x,i)=>"<div class='cart-row'><span>"+x.name+" × "+x.qty+"</span><span>₹"+(x.price*x.qty)+" <button onclick='removeItem("+i+")'>−</button></span></div>").join(""):"<p>Your cart is empty.</p>";
+}
+function removeItem(i){cart[i].qty--;if(cart[i].qty<=0)cart.splice(i,1);updateCart();}
+function openCart(){document.getElementById("modal").style.display="block";updateCart();}
+function closeCart(){document.getElementById("modal").style.display="none";}
+function sendOrder(){
+ if(!cart.length) return alert("Please add items to your cart.");
+ const name=document.getElementById("customerName").value.trim();
+ const phone=document.getElementById("customerPhone").value.trim();
+ const address=document.getElementById("customerAddress").value.trim();
+ if(!name||!phone) return alert("Please enter your name and phone number.");
+ const total=cart.reduce((s,x)=>s+x.price*x.qty,0);
+ let msg="*ATARI CAFE ORDER*%0A%0A";
+ cart.forEach(x=>msg+=x.name+" x "+x.qty+" = ₹"+(x.price*x.qty)+"%0A");
+ msg+="%0A*Total: ₹"+total+"*%0A%0AName: "+encodeURIComponent(name)+"%0APhone: "+encodeURIComponent(phone)+"%0AAddress: "+encodeURIComponent(address||"Not provided");
+ window.open("https://wa.me/917898155515?text="+msg,"_blank");
+}
+renderCats();renderMenu();
+</script>
 </body>
 </html>
