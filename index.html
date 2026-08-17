@@ -20,7 +20,7 @@ color:#fff;
 min-height:78vh;
 background:
 linear-gradient(90deg,rgba(0,0,0,.82),rgba(0,0,0,.28)),
-url('photo1.jpg') center/cover;
+url('photo2~2.jpg') center/cover;
 display:flex;
 align-items:center;
 padding:40px 7%;
@@ -102,14 +102,6 @@ font-size:18px;
 line-height:1.7;
 }
 
-.menu-board{
-width:100%;
-max-width:950px;
-display:block;
-margin:0 auto 35px;
-border-radius:16px;
-}
-
 .categories{
 display:flex;
 gap:10px;
@@ -184,14 +176,6 @@ width:100%;
 height:270px;
 object-fit:cover;
 border-radius:16px;
-}
-
-.gallery .wide{
-grid-column:1/-1;
-height:auto;
-max-height:600px;
-object-fit:contain;
-background:#111;
 }
 
 .info{
@@ -307,66 +291,41 @@ font-size:16px;
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
 <div>
-
 <h1>ATARI CAFE</h1>
-
 <p>GOOD FOOD • GREAT VIBES • GOOD TIMES</p>
 
 <a class="btn" href="#order">Order Online</a>
-
 <a class="btn dark" href="#gallery">View Gallery</a>
 
 </div>
 </div>
 
-
-<!-- NAVIGATION -->
 <nav>
-
 <a href="#about">About</a>
-
 <a href="#menu">Menu</a>
-
 <a href="#gallery">Gallery</a>
-
 <a href="#contact">Contact</a>
-
 </nav>
 
-
-<!-- ABOUT -->
 <section id="about">
 
 <h2 class="title">Welcome to Atari Cafe</h2>
-
 <div class="line"></div>
 
 <div class="about">
-
 A comfortable place in Bankhedi to enjoy delicious
 vegetarian food, refreshing drinks and good times
 with friends and family.
-
 </div>
 
 </section>
 
-
-<!-- MENU -->
 <section id="menu">
 
 <h2 class="title">Our Veg Menu</h2>
-
 <div class="line"></div>
-
-<img
-class="menu-board"
-src="menu-board.png"
-alt="Atari Cafe Menu"
->
 
 <div class="categories" id="cats"></div>
 
@@ -374,65 +333,43 @@ alt="Atari Cafe Menu"
 
 </section>
 
-
-<!-- ORDER -->
 <section id="order">
 
 <h2 class="title">Order Online</h2>
-
 <div class="line"></div>
 
 <div class="about">
-
 Add your favourite vegetarian items to the cart,
 enter your details and send the order directly
 to Atari Cafe on WhatsApp.
-
 </div>
 
 </section>
 
-
-<!-- GALLERY -->
 <section id="gallery">
 
 <h2 class="title">Gallery</h2>
-
 <div class="line"></div>
 
 <div class="gallery">
 
-<img src="photo1.jpg" alt="Atari Cafe">
-
-<img src="photo2.jpg" alt="Atari Cafe Food">
-
-<img src="photo3.jpg" alt="Atari Cafe">
-
-<img src="photo4.jpg" alt="Atari Cafe Drink">
-
-<img
-class="wide"
-src="menu-board.png"
-alt="Atari Cafe Menu Board"
->
+<img src="photo2~2.jpg" alt="Atari Cafe">
+<img src="photo4~2.jpg" alt="Atari Cafe Food">
+<img src="photo5~2.jpg" alt="Atari Cafe">
+<img src="photo6~2.jpg" alt="Atari Cafe">
 
 </div>
 
 </section>
 
-
-<!-- CONTACT -->
 <section id="contact">
 
 <h2 class="title">Contact Us</h2>
-
 <div class="line"></div>
 
 <div class="info">
 
-
 <div class="card">
-
 <h3>Location</h3>
 
 <p>
@@ -442,106 +379,82 @@ Station Road, Bankhedi
 
 <a
 class="btn"
-href="https://www.google.com/maps/search/?api=1&query=Idhgah+Chauraha+Station+Road+Bankhedi"
->
+href="https://www.google.com/maps/search/?api=1&query=Idhgah+Chauraha+Station+Road+Bankhedi">
 Open Maps
 </a>
 
 </div>
 
-
 <div class="card">
-
 <h3>Phone</h3>
 
 <p>7898155515</p>
 
 <a
 class="btn"
-href="tel:7898155515"
->
+href="tel:7898155515">
 Call Now
 </a>
 
 </div>
 
-
 <div class="card">
-
 <h3>WhatsApp Orders</h3>
 
 <p>Send your order directly to us.</p>
 
 <a
 class="btn"
-href="https://wa.me/917898155515"
->
+href="https://wa.me/917898155515">
 WhatsApp
 </a>
 
 </div>
 
-
 </div>
 
 </section>
 
-
-<!-- CART BUTTON -->
 <button class="cart" onclick="openCart()">
-
 🛒 Cart (<span id="count">0</span>)
-
 </button>
 
-
-<!-- CART MODAL -->
 <div class="modal" id="modal">
 
 <div class="modal-box">
 
-<button
-class="close"
-onclick="closeCart()"
->
-×
-</button>
+<button class="close" onclick="closeCart()">×</button>
 
 <h2>Your Order</h2>
 
 <div id="cartItems"></div>
 
 <div class="total">
-
 Total: ₹<span id="total">0</span>
-
 </div>
 
 <label>Name</label>
 
 <input
 id="customerName"
-placeholder="Your name"
->
+placeholder="Your name">
 
 <label>Phone</label>
 
 <input
 id="customerPhone"
-placeholder="Your phone number"
->
+placeholder="Your phone number">
 
 <label>Address</label>
 
 <textarea
 id="customerAddress"
-placeholder="Delivery / pickup details"
-></textarea>
+placeholder="Delivery / pickup details">
+</textarea>
 
 <button
 class="btn dark"
-onclick="sendOrder()"
->
+onclick="sendOrder()">
 Send Order on WhatsApp
 </button>
 
@@ -549,8 +462,6 @@ Send Order on WhatsApp
 
 </div>
 
-
-<!-- FOOTER -->
 <footer>
 
 <strong>ATARI CAFE</strong>
@@ -564,7 +475,6 @@ Good Food • Great Vibes • Good Times
 © 2026 Atari Cafe. All Rights Reserved.
 
 </footer>
-
 
 <script>
 
@@ -745,9 +655,7 @@ items:[
 
 ];
 
-
 let cart=[];
-
 
 function renderMenu(filter="All"){
 
@@ -788,7 +696,6 @@ grid.appendChild(card);
 
 }
 
-
 function renderCats(){
 
 const c=document.getElementById("cats");
@@ -807,7 +714,6 @@ c.appendChild(b);
 });
 
 }
-
 
 function addItem(name,price){
 
@@ -831,7 +737,6 @@ updateCart();
 
 }
 
-
 function updateCart(){
 
 document.getElementById("count").textContent=
@@ -841,7 +746,6 @@ let total=
 cart.reduce((s,x)=>s+x.price*x.qty,0);
 
 document.getElementById("total").textContent=total;
-
 
 document.getElementById("cartItems").innerHTML=
 
@@ -864,7 +768,6 @@ cart.map((x,i)=>
 
 }
 
-
 function removeItem(i){
 
 cart[i].qty--;
@@ -879,7 +782,6 @@ updateCart();
 
 }
 
-
 function openCart(){
 
 document.getElementById("modal").style.display="block";
@@ -888,13 +790,11 @@ updateCart();
 
 }
 
-
 function closeCart(){
 
 document.getElementById("modal").style.display="none";
 
 }
-
 
 function sendOrder(){
 
@@ -906,7 +806,6 @@ return;
 
 }
 
-
 const name=
 document.getElementById("customerName").value.trim();
 
@@ -916,7 +815,6 @@ document.getElementById("customerPhone").value.trim();
 const address=
 document.getElementById("customerAddress").value.trim();
 
-
 if(!name||!phone){
 
 alert("Please enter your name and phone number.");
@@ -925,14 +823,11 @@ return;
 
 }
 
-
 const total=
 cart.reduce((s,x)=>s+x.price*x.qty,0);
 
-
 let msg=
 "*ATARI CAFE ORDER*%0A%0A";
-
 
 cart.forEach(x=>{
 
@@ -946,7 +841,6 @@ x.qty+
 
 });
 
-
 msg+=
 "%0A*Total: ₹"+
 total+
@@ -957,7 +851,6 @@ encodeURIComponent(phone)+
 "%0AAddress: "+
 encodeURIComponent(address||"Not provided");
 
-
 window.open(
 "https://wa.me/917898155515?text="+msg,
 "_blank"
@@ -965,9 +858,7 @@ window.open(
 
 }
 
-
 renderCats();
-
 renderMenu();
 
 </script>
